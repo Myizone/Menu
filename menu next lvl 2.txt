@@ -1,0 +1,208 @@
+menu :-
+    nl,
+    write('===================================='),nl,
+    write('Silahkan pilih menu yang tersedia : '),nl,
+    write('1. Paket 1'),nl,
+    write('	- Mie Ayam Super'),nl,
+    write('	- Es Teh '),nl,
+    write('2. Paket 2'),nl,
+    write('	- Nasi Sayur + Ayam Dada'),nl,
+    write('	- Es Jeruk '),nl,
+    write('3. Paket 3'),nl,
+    write(' - Nasi Goreng Super'),nl,
+    write(' - Es Jeruk'),nl,
+    write('4. Paket 4'),nl,
+    write(' - Bakso Super'),nl,
+    write(' - Sop Buah'),nl,
+    write('5. Exit '),nl,
+    
+
+
+    write('Pilih [1-5]: '),read(Pilih),
+      (    Pilih=1,
+          write('Anda Memilih Paket 1'),nl,
+          write('Harga : Rp. 30,000 '),nl,
+          kupon;
+			Pilih=2,
+          write('Anda Memilih Paket 2'),nl,
+          write('Harga : Rp. 35,000 '),nl,
+          kupon2;
+     		Pilih=3,
+          write('Anda Memilih Paket 3'),nl,
+          write('Harga : Rp. 40,000 '),nl,
+          kupon3;
+      		Pilih=4,
+          write('Anda Memilih Paket 4'),nl,
+          write('Harga : Rp. 45,000 '),nl,
+          kupon4;
+          	Pilih=5,
+          write('Terimakasih')).
+		
+        kupon :-
+    	write('Apakah anda mempunyai kupon? : '),nl,
+        write('1. Ya'),nl,
+        write('2. Tidak'),nl,
+    	write('3. Kembali ke Menu '),nl,
+        write('[1/2/3]: '),read(Cek),nl,
+    		(   Cek=1,
+                write('Masukan Kupon :'),read(KPN),nl,
+                (   KPN=123->  write('Dapat potongan harga 5000'),nl;write('Kupon Salah'),nl,kupon),
+                bayar1;
+            
+                Cek=2,
+    			bayar2;
+    
+    			Cek=3,
+    			write('Anda Kembali Ke Menu'),nl,menu).
+
+					bayar1 :-
+    					write('Ingin Beli Berapa Porsi?:'),read(P),nl,
+                    
+        					TH is (30000*P)-5000,
+                    
+        				write('Total Harga : '),write(TH),nl,
+    					write('Masukan Total Uang anda: '),read(UA),
+                   			 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar1;write('Uang Kembalian Anda = '),nl),
+    						 TTL is UA-TH,
+          				write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+        				menu.
+					bayar2 :-
+    					write('Ingin Beli Berapa Porsi? :'),read(P),nl,
+    
+    						TH is 30000*P,
+    
+    					write('Total Harga :'),write(TH),nl,
+               			write('Masukan Total Uang anda :'),read(UA),
+    						 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar2;write('Uang Kembalian Anda = '),nl),
+                			 TTL is UA-TH,
+               			write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+    					menu.
+
+		kupon2 :-
+    	write('Apakah anda mempunyai kupon? : '),nl,
+        write('1. Ya'),nl,
+        write('2. Tidak'),nl,
+    	write('3. Kembali ke Menu '),nl,
+        write('[1/2/3]: '),read(Cek),nl,
+    		(   Cek=1,
+                write('Masukan Kupon :'),read(KPN),nl,
+                (   KPN=123->  write('Dapat potongan harga 5000'),nl;write('Kupon Salah'),nl,kupon),
+                bayar3;
+            
+                Cek=2,
+    			bayar4;
+    
+    			Cek=3,
+    			write('Anda Kembali Ke Menu'),nl,menu).
+
+					bayar3 :-
+    					write('Ingin Beli Berapa Porsi?:'),read(P),nl,
+                    
+        					TH is (35000*P)-5000,
+                    
+        				write('Total Harga : '),write(TH),nl,
+    					write('Masukan Total Uang anda: '),read(UA),
+                   			 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar3;write('Uang Kembalian Anda = '),nl),
+    						 TTL is UA-TH,
+          				write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+        				menu.
+					bayar4 :-
+    					write('Ingin Beli Berapa Porsi? :'),read(P),nl,
+    
+    						TH is 35000*P,
+    
+    					write('Total Harga :'),write(TH),nl,
+               			write('Masukan Total Uang anda :'),read(UA),
+    						 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar4;write('Uang Kembalian Anda'),nl),
+                			 TTL is UA-TH,
+               			write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+    					menu.
+
+		kupon3 :-
+    	write('Apakah anda mempunyai kupon? : '),nl,
+        write('1. Ya'),nl,
+        write('2. Tidak'),nl,
+    	write('3. Kembali ke Menu '),nl,
+        write('[1/2/3]: '),read(Cek),nl,
+    		(   Cek=1,
+                write('Masukan Kupon :'),read(KPN),nl,
+                (   KPN=123->  write('Dapat potongan harga 5000'),nl;write('Kupon Salah'),nl,kupon),
+                bayar5;
+            
+                Cek=2,
+    			bayar6;
+    
+    			Cek=3,
+    			write('Anda Kembali Ke Menu'),nl,menu).
+
+					bayar5 :-
+    					write('Ingin Beli Berapa Porsi?:'),read(P),nl,
+                    
+        					TH is (40000*P)-5000,
+                    
+        				write('Total Harga : '),write(TH),nl,
+    					write('Masukan Total Uang anda: '),read(UA),
+                   			 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar5;write('Uang Kembalian Anda = '),nl),
+    						 TTL is UA-TH,
+          				write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+        				menu.
+					bayar6 :-
+    					write('Ingin Beli Berapa Porsi? :'),read(P),nl,
+    
+    						TH is 40000*P,
+    
+    					write('Total Harga :'),write(TH),nl,
+               			write('Masukan Total Uang anda :'),read(UA),
+    						 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar6;write('Uang Kembalian Anda'),nl),
+                			 TTL is UA-TH,
+               			write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+    					menu.
+
+	kupon4 :-
+    	write('Apakah anda mempunyai kupon? : '),nl,
+        write('1. Ya'),nl,
+        write('2. Tidak'),nl,
+    	write('3. Kembali ke Menu '),nl,
+        write('[1/2/3]: '),read(Cek),nl,
+    		(   Cek=1,
+                write('Masukan Kupon :'),read(KPN),nl,
+                (   KPN=123->  write('Dapat potongan harga 5000'),nl;write('Kupon Salah'),nl,kupon),
+                bayar7;
+            
+                Cek=2,
+    			bayar8;
+    
+    			Cek=3,
+    			write('Anda Kembali Ke Menu'),nl,menu).
+
+					bayar7 :-
+    					write('Ingin Beli Berapa Porsi?:'),read(P),nl,
+                    
+        					TH is (45000*P)-5000,
+                    
+        				write('Total Harga : '),write(TH),nl,
+    					write('Masukan Total Uang anda: '),read(UA),
+                   			 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar7;write('Uang Kembalian Anda = '),nl),
+    						 TTL is UA-TH,
+          				write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+        				menu.
+					bayar8 :-
+    					write('Ingin Beli Berapa Porsi? :'),read(P),nl,
+    
+    						TH is 45000*P,
+    
+    					write('Total Harga :'),write(TH),nl,
+               			write('Masukan Total Uang anda :'),read(UA),
+    						 (   UA<TH->  write('Uang Anda Kurang, Silahkan Masukan Uang anda lagi!'),nl,bayar8;write('Uang Kembalian Anda'),nl),
+                			 TTL is UA-TH,
+               			write(''),write(TTL),nl,
+    					write('=====Terimakasih====='),nl,
+    					menu.
+                
